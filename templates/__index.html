@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>福岡引越し業者</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo" id="logo">
+            <div class="contact-info">
+                <meta name="description" content="引越しなら安心・迅速な引越しサービスを提供する福岡の引越し業者です。単身・ファミリー・オフィス引越しも対応しています。">
+
+                <p>TEL: 0120-000000 | 092-800-0000</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">トップ</a></li>
+                <li><a href="#plan1">単身・学生プラン</a></li>
+                <li><a href="#plan2">ファミリープラン</a></li>
+                <li><a href="#plan3">オフィス引越プラン</a></li>
+                <li><a href="#company">会社概要</a></li>
+                <li><a href="#contact">お問合せ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="{{ url_for('static', filename='images/example_pic.png') }}" alt="Moving Image">
+        <h1>引越しはお任せください！</h1>
+        <p>引越しに最適なプランをご提供します。</p>
+    </section>
+
+    <section id="services">
+        <h2>当社取扱い内容</h2>
+        <p>当社の取扱い業務の内容をご案内いたします。</p>
+        <img src="{{ url_for('static', filename='moving_image2.png') }}" alt="Service Image">
+    </section>
+
+    <section id="merits">
+        <h2>7つのメリット</h2>
+        <div class="merits-grid">
+            <div class="merit-item">1. 運送保険・賠償保険（人・運）完備</div>
+            <div class="merit-item">2. 見積もり無料、プラン相談無料</div>
+            <div class="merit-item">3. 年中無休24時間配送</div>
+            <div class="merit-item">4. 国内外問わず海外引越しにも対応</div>
+            <div class="merit-item">5. 家具の組立・設置も承ります</div>
+            <div class="merit-item">6. 引越し専門のスタッフが対応し安心</div>
+            <div class="merit-item">7. 狭い路地でもクレーン作業が可能</div>
+        </div>
+    </section>
+
+    <section id="options">
+        <h2>オプションサービス</h2>
+        <p>当社のオプションサービスで、さらに便利な引越しをサポートします。</p>
+        <ul>
+            <li>家具の移設、リサイクルサービス</li>
+            <li>ピアノ輸送</li>
+            <li>不用品処理サービス</li>
+            <li>ハウスクリーニングサービス</li>
+        </ul>
+        <img src="{{ url_for('static', filename='option_service_image.png') }}" alt="Option Service Image">
+    </section>
+
+    <section id="share">
+        <h2>リンク</h2>
+        <p>会社概要</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+                <img src="{{ url_for('static', filename='facebook-icon.png') }}" alt="Facebook">
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+                <img src="{{ url_for('static', filename='twitter-icon.png') }}" alt="Twitter">
+            </a>
+            <a href="https://www.linkedin.com" target="_blank">
+                <img src="{{ url_for('static', filename='linkedin-icon.png') }}" alt="LinkedIn">
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 引越し業者</p>
+    </footer>
+</body>
+</html>

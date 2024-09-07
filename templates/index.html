@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyttfirma</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo" id="logo">
+            </div>
+            <div class="contact-info">
+                <p>TEL: 0120-000000 | 092-800-0000</p>
+            </div>
+            <div class="search-bar">
+                <form action="/search" method="get">
+                    <input type="text" placeholder="Sök efter nyckelord" name="query">
+                    <button type="submit">söka</button>
+                </form>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">bästa</a></li>
+                <li><a href="#plan1">Singel/Student Plan</a></li>
+                <li><a href="#plan2">familjeplan</a></li>
+                <li><a href="#plan3">flyttplan för kontor</a></li>
+                <li><a href="#company">Företagsprofil</a></li>
+                <li><a href="#contact">Kontakta oss</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="carousel">
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="{{ url_for('static', filename='images/example_pic1.png') }}" alt="Image 1" class="carousel-image">
+                <img src="{{ url_for('static', filename='images/example_pic2.png') }}" alt="Image 2" class="carousel-image">
+                <img src="{{ url_for('static', filename='images/example_pic3.png') }}" alt="Image 3" class="carousel-image">
+            </div>
+        </div>
+        <button id="prev-btn" class="carousel-btn">❮</button>
+        <button id="next-btn" class="carousel-btn">❯</button>
+    </section>
+
+    <section id="services">
+        <h2>Våra Tjänster</h2>
+        <p>Vi presenterar våra tjänster.</p>
+        <img src="{{ url_for('static', filename='moving_image2.png') }}" alt="Service Image">
+    </section>
+
+    <section id="merits">
+        <h2>7 Fördelar</h2>
+        <div class="merits-grid">
+            <div class="merit-item">1. Full försäkring för transport och ansvar (personer och gods)</div>
+            <div class="merit-item">2. Gratis offert och kostnadsfri rådgivning om planer</div>
+            <div class="merit-item">3. Leverans dygnet runt, året om</div>
+            <div class="merit-item">4. Hantering av både nationella och internationella flyttar</div>
+            <div class="merit-item">5. Hantering av både nationella och internationella flyttar</div>
+            <div class="merit-item">6. Specialiserad personal för säker hantering</div>
+            <div class="merit-item">7. Möjlighet till kranarbete på smala gator</div>
+        </div>
+    </section>
+
+    <section id="options">
+        <h2>Tilläggstjänster</h2>
+        <p>Våra tilläggstjänster gör din flytt ännu enklare.</p>
+        <ul>
+            <li>Omplacering av möbler, återvinningstjänster</li>
+            <li>Pianotransport</li>
+            <li>Borttagning av oönskade föremål</li>
+            <li>Hemstädningstjänster</li>
+        </ul>
+        <img src="{{ url_for('static', filename='option_service_image.png') }}" alt="Option Service Image">
+    </section>
+
+
+    <section id="quote">
+        <h2>Få en offert nu!</h2>
+        <div class="quote-options">
+            <div class="quote-box">
+                <h3> Offert för ensamflytt</h3>
+                <p>Offert via telefon eller besök</p>
+                <div class="discount">30% OFF</div>
+            </div>
+            <div class="quote-box">
+                <h3>Offert för familjeflytt</h3>
+                <p>Uppskattning för besök</p>
+                <div class="discount">30% OFF</div>
+            </div>
+            <div class="quote-box">
+                <h3>Återkommande kunder</h3>
+                <p>Rabatter för återkommande kunder</p>
+                <div class="discount">30% OFF</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Flyttfirma XX. All rights reserved.</p>
+        <p>Kontakta oss: contact@X.com</p>
+    </footer>
+
+    <script>
+
+    $(document).ready(function() {
+    let currentIndex = 0;
+    const slides = $('.carousel-image');
+    const totalSlides = slides.length;
+    const slideWidth = $('.carousel-image').width(); // スライド幅を取得
+
+    // Update the carousel's position
+    function updateCarousel() {
+        const translateX = -currentIndex * slideWidth; // スライド幅に基づいてポジションを計算
+        $('.carousel-slide').css('transform', `translateX(${translateX}px)`);
+    }
+
+    // Show next slide
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides; // 次のスライドへ
+        updateCarousel();
+    }
+
+    // Show previous slide
+    $('#prev-btn').on('click', function() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; // 前のスライドへ
+        updateCarousel();
+    });
+
+    // Show next slide on right button click
+    $('#next-btn').on('click', function() {
+        nextSlide();
+    });
+
+    // Initialize the carousel position
+    updateCarousel();
+
+    // 自動スライド機能 (3秒ごとに次のスライドへ)
+    setInterval(nextSlide, 3000); // 3000ms (3秒)ごとにnextSlideを実行
+    });
+
+
+    </script>
+    
+</body>
